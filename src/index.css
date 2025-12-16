@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Sidebar scrollbar: hidden by default */
+.smart-scrollbar {
+  scrollbar-width: thin;        /* Firefox */
+  scrollbar-color: #9ca3af transparent;
+}
+
+/* Chrome, Edge, Safari */
+.smart-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+
+.smart-scrollbar:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.smart-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 10px;
+}
+
+.smart-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
