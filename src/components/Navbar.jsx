@@ -1,20 +1,26 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
-const Navbar = ({sidebar, setSidebar}) => {
+const Navbar = ({ sidebar, setSidebar }) => {
   return (
     <div className="w-full bg-white shadow-md px-8 py-3 fixed top-0 z-50">
       <div className="flex items-center justify-between">
-        
         {/* Left */}
         <div className="flex items-center gap-3">
-          <img src={assets.Menu} alt="Menu" className="w-5" onClick={() => setSidebar(!sidebar)} />
-          <img src={assets.Logo} alt="Logo" className="w-20 md:w-24" />
+          <img
+            src={assets.Menu}
+            alt="Menu"
+            className="w-5"
+            onClick={() => setSidebar(!sidebar)}
+          />
+          <Link to="/">
+            <img src={assets.Logo} alt="Logo" className="w-20 md:w-24" />
+          </Link>
         </div>
 
         {/* Center - Search */}
         <div className="flex-1 flex justify-center">
-          
           {/* Desktop Search */}
           <div className="relative hidden md:block w-full max-w-lg">
             <input
@@ -37,14 +43,17 @@ const Navbar = ({sidebar, setSidebar}) => {
               className="w-6 cursor-pointer"
             />
           </div>
-
         </div>
 
         {/* Right */}
         <div className="flex items-center gap-4">
           <img src={assets.Upload} alt="Upload" className="w-6 md:w-8" />
           <img src={assets.More} alt="More" className="w-6 md:w-8" />
-          <img src={assets.Notification} alt="Notification" className="w-6 md:w-8" />
+          <img
+            src={assets.Notification}
+            alt="Notification"
+            className="w-6 md:w-8"
+          />
           <img
             src={assets.Jack}
             alt="Profile"

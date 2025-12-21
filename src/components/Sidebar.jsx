@@ -2,15 +2,15 @@ import React from "react";
 import { assets } from "../assets/assets";
 
 const menuItems = [
-  { icon: assets.Home, label: "Home" },
-  { icon: assets.Game_icon, label: "Gaming" },
-  { icon: assets.Automobiles, label: "Automobiles" },
-  { icon: assets.Sports, label: "Sports" },
-  { icon: assets.Entertainment, label: "Entertainment" },
-  { icon: assets.Tech, label: "Technology" },
-  { icon: assets.Music, label: "Music" },
-  { icon: assets.Blogs, label: "Blogs" },
-  { icon: assets.News, label: "News" },
+  { id: 0, icon: assets.Home, label: "Home" }, // All videos
+  { id: 20, icon: assets.Game_icon, label: "Gaming" },
+  { id: 2, icon: assets.Automobiles, label: "Automobiles" },
+  { id: 17, icon: assets.Sports, label: "Sports" },
+  { id: 24, icon: assets.Entertainment, label: "Entertainment" },
+  { id: 28, icon: assets.Tech, label: "Technology" },
+  { id: 10, icon: assets.Music, label: "Music" },
+  { id: 22, icon: assets.Blogs, label: "Blogs" },
+  { id: 25, icon: assets.News, label: "News" },
 ];
 
 const subscriptions = [
@@ -21,7 +21,7 @@ const subscriptions = [
   { icon: assets.Cameron, label: "Nasty Kim" },
 ];
 
-const Sidebar = ({ sidebar }) => {
+const Sidebar = ({ sidebar, category, setCategory }) => {
   return (
     <aside
       className={`
@@ -36,12 +36,20 @@ const Sidebar = ({ sidebar }) => {
     >
       {/* Main Menu */}
       <div className="flex flex-col gap-1">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <div
-            key={index}
+            key={item.id}
+            onClick={() => setCategory(item.id)}
             className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 transition"
           >
-            <img src={item.icon} alt={item.label} className="w-5" />
+            <div
+              className={`
+              pb-1 
+              ${category === item.id ? "border-b-2 border-red-600": "border-b-2 border-transparent"}
+              `}
+            >
+              <img src={item.icon} alt={item.label} className="w-5" />
+            </div>
             {!sidebar && <p className="text-sm font-medium">{item.label}</p>}
           </div>
         ))}
@@ -61,7 +69,11 @@ const Sidebar = ({ sidebar }) => {
             key={index}
             className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-300 transition"
           >
-            <img src={item.icon} alt={item.label} className="w-10 rounded-full" />
+            <img
+              src={item.icon}
+              alt={item.label}
+              className="w-10 rounded-full"
+            />
             {!sidebar && <p className="text-sm truncate">{item.label}</p>}
           </div>
         ))}

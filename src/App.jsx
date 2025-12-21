@@ -11,7 +11,7 @@ function App() {
       <Navbar sidebar = {sidebar} setSidebar={setSidebar} />
       <Routes>
         <Route path="/" element={<Home sidebar={sidebar} />} />
-        <Route path="/video" element = {<Video/>}/>
+        <Route path="/video/:id" element = {<Video/>}/>
       </Routes>
     </div>
   );

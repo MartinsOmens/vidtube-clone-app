@@ -24,7 +24,7 @@ const Recommended = () => {
         lg:w-full
         pt-6 md:pt-20 mb-5
         px-2 sm:px-4
-        md:sticky md:top-20
+        md:sticky
         h-fit
       "
     >
