@@ -3,17 +3,27 @@ import Feed from "../components/Feed";
 import Sidebar from "../components/Sidebar";
 
 export default function Home({ sidebar }) {
-
   const [category, setCategory] = useState("0");
+
   return (
-    <div className="flex pt-20">
-      <Sidebar sidebar={sidebar} category={category} setCategory={setCategory} />
-      <div
-        className={`flex-1 transition-all duration-300`}
-        style={{ marginLeft: sidebar ? "5rem" : "15rem" }}
+    <div className="pt-20">
+      {/* Sidebar */}
+      <Sidebar
+        sidebar={sidebar}
+        category={category}
+        setCategory={setCategory}
+      />
+
+      {/* Main Content */}
+      <main
+        className={`
+          transition-all duration-300
+          ml-0
+          ${sidebar ? "md:ml-20 lg:pl-6" : "md:ml-60 lg:pl-6"}
+        `}
       >
-        <Feed category={category} setCategory={setCategory} />
-      </div>
+        <Feed category={category} />
+      </main>
     </div>
   );
 }

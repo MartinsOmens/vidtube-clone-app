@@ -1,25 +1,21 @@
 import React from "react";
 import PlayVideo from "../components/PlayVideo";
 import Recommended from "../components/Recommended";
-
+import { useParams } from "react-router-dom";
 
 const Video = () => {
-  return (
-    <>
-      <div className="w-full flex flex-col lg:flex-row">
-        
-        {/* MAIN VIDEO */}
-        <div className="w-full lg:w-[65%]">
-          <PlayVideo />
-        </div>
+  const { videoId, categoryId } = useParams();
 
-        {/* RECOMMENDED */}
-        <div className="w-full lg:w-[35%]">
-          <Recommended />
-        </div>
+  return (
+    <div className="flex flex-col lg:flex-row gap-6 max-w-7xl  px-2 pt-20">
+      <div className="flex-1">
+        <PlayVideo videoId={videoId} />
       </div>
-    </>
+      <Recommended videoId={videoId} categoryId={categoryId} />
+    </div>
   );
 };
 
 export default Video;
+
+

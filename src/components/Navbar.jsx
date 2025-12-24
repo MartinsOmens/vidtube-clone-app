@@ -11,11 +11,11 @@ const Navbar = ({ sidebar, setSidebar }) => {
           <img
             src={assets.Menu}
             alt="Menu"
-            className="w-5"
+            className="w-5 cursor-pointer hidden md:block"
             onClick={() => setSidebar(!sidebar)}
           />
           <Link to="/">
-            <img src={assets.Logo} alt="Logo" className="w-20 md:w-24" />
+            <img src={assets.Logo} alt="Logo" className="w-20 md:w-24"/>
           </Link>
         </div>
 
@@ -47,12 +47,12 @@ const Navbar = ({ sidebar, setSidebar }) => {
 
         {/* Right */}
         <div className="flex items-center gap-4">
-          <img src={assets.Upload} alt="Upload" className="w-6 md:w-8" />
-          <img src={assets.More} alt="More" className="w-6 md:w-8" />
+          <img src={assets.Upload} alt="Upload" className="w-6 md:w-8 hidden md:flex" />
+          <img src={assets.More} alt="More" className="w-6 md:w-8 hidden md:flex" />
           <img
             src={assets.Notification}
             alt="Notification"
-            className="w-6 md:w-8"
+            className="w-6 md:w-8 hidden md:flex"
           />
           <img
             src={assets.Jack}

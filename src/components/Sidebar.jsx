@@ -25,7 +25,8 @@ const Sidebar = ({ sidebar, category, setCategory }) => {
   return (
     <aside
       className={`
-        hidden md:flex flex-col
+        hidden
+         md:flex flex-col
         fixed top-20 left-0
         h-[calc(100vh-2rem)]
         bg-white px-3 py-6

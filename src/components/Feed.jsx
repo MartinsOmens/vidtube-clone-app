@@ -24,18 +24,18 @@ const Feed = ({ category }) => {
   }, [category]);
 
   return (
-    <div className="p-4 min-h-screen transition-all duration-300">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="p-3 sm:p-4 max-w-full overflow-x-hidden transition-all duration-300">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {data.map((video) => (
           <Link
             key={video.id}
-            to={`/video/${video.id}`}
+            to={`/video/${video.snippet.categoryId}/${video.id}`}
             className="cursor-pointer rounded-lg overflow-hidden hover:bg-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4"
           >
             <img
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
-              className="w-full rounded"
+             className="w-full aspect-video object-cover rounded"
             />
 
             <div className="p-2">
