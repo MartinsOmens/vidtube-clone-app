@@ -45,7 +45,8 @@ const Recommended = ({ videoId, categoryId = "0" }) => {
   }
 
   return (
-    <aside className="w-full lg:max-w-100 pt-20 px-2">
+    <aside className="w-full lg:max-w-100 md:pt-20 sm:pt-5 px-2">
+      <h1 className="text-2xl font-semibold leading-tight line-clamp-2 group-hover:text-gray-600 pb-5 sm:block md:hidden">Recommended</h1>
       <div className="flex flex-col gap-3">
         {videos.map((item) => (
           <Link
